@@ -1,0 +1,38 @@
+{
+  "name": "Тест по вселенной Лунтика",
+  "questions": [
+    {
+      "type": "choice",
+      "max_points": 3,
+      "params": {
+        "text": "Где родился Лунтик?",
+        "variants": [
+          {
+            "text": "На Земле",
+            "is_correct": true
+          },
+          {
+            "text": "На Луне",
+            "is_correct": false
+          },
+          {
+            "text": "За пупой",
+            "is_correct": false
+          },
+          {
+            "text": "За лупой",
+            "is_correct": false
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "max_points": 5,
+      "params": {
+        "text": "Как зовут брата Вупсеня",
+        "correct": "Пупсень"
+      }
+    }
+  ]
+}

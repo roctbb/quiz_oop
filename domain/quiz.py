@@ -4,9 +4,9 @@ from domain.questions.text_question import TextQuestion
 class Quiz:
     def __init__(self, description: dict = None):
         self.__questions = []
-        self.__points = None
-        self.__max_points = None
-        self.__name = None
+        self.__points = 0
+        self.__max_points = 0
+        self.__name = ""
 
         if description:
             self.__load_from_dict(description)
@@ -42,7 +42,8 @@ class Quiz:
     def perform(self):
         print(f"Добро пожаловать в квиз << {self.name} >>")
 
-        # TODO: У каждого вопроса вызвать метод perform и прибавить то, что он вернул к self.__points
-        # TODO: Максимальный балл за вопроса прибавить к self.__max_points
+        for question in self.__questions:
+            self.__points += question.perform()
+            self.__max_points += question.max_points
 
-        # TODO: подвести итоги - сказать какой процент выполнения
+        print(f"Вы набрали {self.points} / {self.max_points}")

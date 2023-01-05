@@ -16,6 +16,6 @@ class TextQuestion(Question):
         print("\n")
 
         if answer == self.__correct_answer:
-            return self._max_points
+            return self.max_points
         else:
             return 0

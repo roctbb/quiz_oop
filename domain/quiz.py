@@ -1,3 +1,6 @@
+from domain.questions.text_question import TextQuestion
+
+
 class Quiz:
     def __init__(self, description: dict = None):
         self.__questions = []
@@ -11,9 +14,14 @@ class Quiz:
     def __load_from_dict(self, description):
         self.__name = description['name']
 
-        # TODO: загрузить вопросы
-        # TODO: для каждого вопроса в description['questions'],
-        # TODO: создать объект нужного типа и положить его в self.__questions
+        # для каждого вопроса из (вопросов из описания)
+        for question in description['questions']:
+            # если (тип вопроса) - это "текст"
+            if question['type'] == 'text':
+                # мои вопросы добавить новый объект текстовый вопрос с параметром описание вопроса
+                self.__questions.append(TextQuestion(question))
+
+            # TODO: добавить создание вопросов с выбором варианта
 
     @property
     def questions(self):
